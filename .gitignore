@@ -1,0 +1,22 @@
+# Python / virtual env / cache
+__pycache__/
+*.pyc
+.python-version
+.venv/
+env/
+venv/
+
+# Conda / pip artifacts
+*.egg-info/
+.conda/
+
+# Jupyter / logs
+.ipynb_checkpoints/
+
+# Project outputs
+runs/
+*.pt
+
+# OS / editor
+.DS_Store
+.vscode/
