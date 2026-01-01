@@ -1,0 +1,13 @@
+Epoch 1 Step 10 - avg loss/frame: 0.0051 - batch loss: 3.0507
+Epoch 1 Step 20 - avg loss/frame: 0.0038 - batch loss: 2.9944
+Epoch 1 Step 30 - avg loss/frame: 0.0032 - batch loss: 2.9164
+Epoch 1 Step 40 - avg loss/frame: 0.0030 - batch loss: 2.8184
+Epoch 1 Step 50 - avg loss/frame: 0.0028 - batch loss: 2.9148
+Epoch 1 Step 60 - avg loss/frame: 0.0027 - batch loss: 2.8682
+Epoch 1 Step 70 - avg loss/frame: 0.0026 - batch loss: 2.8577
+Epoch 1 Step 80 - avg loss/frame: 0.0025 - batch loss: 2.9013
+Epoch 1 Step 90 - avg loss/frame: 0.0025 - batch loss: 2.8625
+Epoch 1 Step 100 - avg loss/frame: 0.0025 - batch loss: 2.9138
+Epoch 1 complete. Processed steps=100, avg loss/frame=0.0025
+Epoch 2 Step 10 - avg loss/frame: 0.0021 - batch loss: 2.8563
+Epoch 2 Step 20 - avg loss/frame: 0.0022 - batch loss: 2.8912

@@ -17,6 +17,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader
+import wandb
 
 os.environ.setdefault("HF_DATASETS_AUDIO_BACKEND", "soundfile")
 
@@ -127,6 +128,12 @@ def train(args):
     criterion = nn.CTCLoss(blank=tokenizer.blank_id, zero_infinity=True)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 
+    wandb_run = None
+    if args.use_wandb:
+        config = {k: (str(v) if isinstance(v, Path) else v) for k, v in vars(args).items()}
+        wandb_run = wandb.init(project=args.wandb_project, name=args.wandb_run_name, mode=args.wandb_mode, config=config)
+
+    global_step = 0
     for epoch in range(1, args.epochs + 1):
         model.train()
         running_loss = 0.0
@@ -153,10 +160,22 @@ def train(args):
             running_loss += loss.item() * batch_logmels.size(0)
             frames_seen += input_lengths.sum().item()
             processed_steps += 1
+            global_step += 1
 
             if processed_steps % args.log_interval == 0:
                 avg_loss = running_loss / max(frames_seen, 1)
                 print(f"Epoch {epoch} Step {processed_steps} - avg loss/frame: {avg_loss:.4f} - batch loss: {loss.item():.4f}")
+                if wandb_run:
+                    wandb.log(
+                        {
+                            "train/avg_loss_per_frame": avg_loss,
+                            "train/batch_loss": loss.item(),
+                            "train/frames_seen": frames_seen,
+                            "train/step": processed_steps,
+                            "train/epoch": epoch,
+                        },
+                        step=global_step,
+                    )
 
             if args.steps_per_epoch and processed_steps >= args.steps_per_epoch:
                 break
@@ -166,6 +185,16 @@ def train(args):
         else:
             avg_loss = running_loss / max(frames_seen, 1)
             print(f"Epoch {epoch} complete. Processed steps={processed_steps}, avg loss/frame={avg_loss:.4f}")
+            if wandb_run:
+                wandb.log(
+                    {
+                        "train/epoch_avg_loss_per_frame": avg_loss,
+                        "train/processed_steps": processed_steps,
+                        "train/frames_seen": frames_seen,
+                        "train/epoch": epoch,
+                    },
+                    step=global_step,
+                )
 
     if args.checkpoint_path:
         ckpt = {
@@ -180,6 +209,9 @@ def train(args):
         }
         torch.save(ckpt, args.checkpoint_path)
         print(f"Saved checkpoint to {args.checkpoint_path}")
+
+    if wandb_run:
+        wandb_run.finish()
 
 
 def parse_args():
@@ -207,6 +239,17 @@ def parse_args():
     parser.add_argument("--log-interval", type=int, default=10, dest="log_interval")
     parser.add_argument("--checkpoint-path", type=Path, default=Path("bilstm_ctc_checkpoint.pt"), dest="checkpoint_path")
     parser.add_argument("--cache-dir", type=Path, default=None, dest="cache_dir")
+    parser.add_argument("--wandb", action="store_true", dest="use_wandb", help="Enable Weights & Biases logging.")
+    parser.add_argument("--wandb-project", type=str, default="audioml-ctc", dest="wandb_project", help="W&B project name.")
+    parser.add_argument("--wandb-run-name", type=str, default=None, dest="wandb_run_name", help="Optional W&B run display name.")
+    parser.add_argument(
+        "--wandb-mode",
+        type=str,
+        choices=["online", "offline", "disabled"],
+        default=None,
+        dest="wandb_mode",
+        help="Set W&B mode; defaults to library default.",
+    )
     return parser.parse_args()
 
 

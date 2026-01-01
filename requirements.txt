@@ -3,3 +3,4 @@ torch>=2.1.0
 torchaudio>=2.1.0
 numpy>=1.23.0
 soundfile>=0.12.1
+wandb>=0.16.0
