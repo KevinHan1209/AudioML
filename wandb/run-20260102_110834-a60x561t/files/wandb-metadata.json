@@ -1,0 +1,70 @@
+{
+  "os":  "Linux-6.8.0-90-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.14.2",
+  "startedAt":  "2026-01-02T17:08:34.849603Z",
+  "args":  [
+    "--steps-per-epoch",
+    "5000",
+    "--batch-size",
+    "8",
+    "--epochs",
+    "15",
+    "--wandb"
+  ],
+  "program":  "/home/kevin/AudioML/train_streaming_ctc.py",
+  "codePath":  "train_streaming_ctc.py",
+  "codePathLocal":  "train_streaming_ctc.py",
+  "git":  {
+    "remote":  "https://github.com/KevinHan1209/AudioML.git",
+    "commit":  "2f768a51ffdede61529eb43ad22c35d9c62cd099"
+  },
+  "email":  "kevinhan@utexas.edu",
+  "root":  "/home/kevin/AudioML",
+  "host":  "dr-light",
+  "executable":  "/home/kevin/miniconda3/envs/audioML/bin/python",
+  "cpu_count":  32,
+  "cpu_count_logical":  64,
+  "gpu":  "NVIDIA GeForce RTX 2080 Ti",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "1963519844352",
+      "used":  "1588574879744"
+    }
+  },
+  "memory":  {
+    "total":  "270076235776"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing",
+      "uuid":  "GPU-63307af7-2ca9-29df-dad7-e95b3f5defb4"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing",
+      "uuid":  "GPU-c7318003-f215-aa88-e936-c58d54643573"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing",
+      "uuid":  "GPU-219f95f0-6b91-15d6-436f-cf1f0d82d297"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing",
+      "uuid":  "GPU-deac1f90-5232-de6a-e6de-34dd4f78ce43"
+    }
+  ],
+  "cudaVersion":  "12.8",
+  "writerId":  "c9ojftbdtzkkwrwnykppquknhsg7ot6v"
+}

@@ -1,0 +1,26 @@
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_setup.py:_flush():80] Current SDK version is 0.23.1
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_setup.py:_flush():80] Configure stats pid to 1845302
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_setup.py:_flush():80] Loading settings from /home/kevin/.config/wandb/settings
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_setup.py:_flush():80] Loading settings from /home/kevin/AudioML/wandb/settings
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_init.py:setup_run_log_directory():714] Logging user logs to /home/kevin/AudioML/wandb/run-20260104_131732-549uejn4/logs/debug.log
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_init.py:setup_run_log_directory():715] Logging internal logs to /home/kevin/AudioML/wandb/run-20260104_131732-549uejn4/logs/debug-internal.log
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_init.py:init():841] calling init triggers
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_init.py:init():846] wandb.init called with sweep_config: {}
+config: {'subset': 'all', 'split': 'train.960', 'sample_rate': 16000, 'batch_size': 8, 'num_workers': 0, 'pin_memory': False, 'max_samples': None, 'n_fft': 400, 'hop_length': 160, 'n_mels': 80, 'fmin': 0.0, 'fmax': None, 'hidden_size': 256, 'num_layers': 3, 'dropout': 0.1, 'lr': 0.001, 'weight_decay': 0.0001, 'grad_clip': 5.0, 'epochs': 30, 'steps_per_epoch': 7000, 'log_interval': 10, 'checkpoint_path': 'bilstm_ctc_checkpoint.pt', 'cache_dir': None, 'use_wandb': True, 'wandb_project': 'audioml-ctc', 'wandb_run_name': 'bilstm-ctc-train960', 'wandb_mode': None, '_wandb': {}}
+2026-01-04 13:17:32,237 INFO    MainThread:1845302 [wandb_init.py:init():889] starting backend
+2026-01-04 13:17:32,451 INFO    MainThread:1845302 [wandb_init.py:init():892] sending inform_init request
+2026-01-04 13:17:32,454 INFO    MainThread:1845302 [wandb_init.py:init():900] backend started and connected
+2026-01-04 13:17:32,455 INFO    MainThread:1845302 [wandb_init.py:init():970] updated telemetry
+2026-01-04 13:17:32,459 INFO    MainThread:1845302 [wandb_init.py:init():994] communicating run to backend with 90.0 second timeout
+2026-01-04 13:17:32,821 INFO    MainThread:1845302 [wandb_init.py:init():1041] starting run threads in backend
+2026-01-04 13:17:32,897 INFO    MainThread:1845302 [wandb_run.py:_console_start():2521] atexit reg
+2026-01-04 13:17:32,897 INFO    MainThread:1845302 [wandb_run.py:_redirect():2369] redirect: wrap_raw
+2026-01-04 13:17:32,897 INFO    MainThread:1845302 [wandb_run.py:_redirect():2438] Wrapping output streams.
+2026-01-04 13:17:32,897 INFO    MainThread:1845302 [wandb_run.py:_redirect():2461] Redirects installed.
+2026-01-04 13:17:32,901 INFO    MainThread:1845302 [wandb_init.py:init():1081] run started, returning control to user process
+2026-01-05 03:14:08,225 INFO    MainThread:1845302 [wandb_run.py:_finish():2287] finishing run kevinhan-the-university-of-texas-at-austin/audioml-ctc/549uejn4
+2026-01-05 03:14:08,225 INFO    MainThread:1845302 [wandb_run.py:_atexit_cleanup():2486] got exitcode: 0
+2026-01-05 03:14:08,225 INFO    MainThread:1845302 [wandb_run.py:_restore():2468] restore
+2026-01-05 03:14:08,225 INFO    MainThread:1845302 [wandb_run.py:_restore():2474] restore done
+2026-01-05 03:14:08,759 INFO    MainThread:1845302 [wandb_run.py:_footer_sync_info():3862] logging synced files

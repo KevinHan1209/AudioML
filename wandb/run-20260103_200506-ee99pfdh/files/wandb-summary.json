@@ -1,0 +1,1 @@
+{"_runtime":17838.280568822,"train/frames_seen":50596921,"train/epoch":15,"_timestamp":1.7675101451091182e+09,"_wandb":{"runtime":17838},"train/step":5000,"_step":75000,"train/epoch_avg_loss_per_frame":0.00045334608595662423,"train/processed_steps":5000,"train/avg_loss_per_frame":0.00045334608595662423,"train/batch_loss":0.44500499963760376}

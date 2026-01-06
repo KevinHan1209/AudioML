@@ -8,7 +8,7 @@ copy of LibriSpeech and lazily converts waveforms to log-mel spectrograms.
 
 from __future__ import annotations
 
-from typing import Dict, Iterable, Iterator, Optional, Tuple
+from typing import Dict, Iterable, Iterator, List, Optional, Tuple
 
 from io import BytesIO
 
@@ -65,17 +65,29 @@ class StreamingLibriSpeechDataset(IterableDataset):
         """
 
         load_kwargs = load_dataset_kwargs.copy() if load_dataset_kwargs else {}
-        self.base_dataset: HFIterableDataset = load_dataset(
-            "librispeech_asr",
-            subset,
-            split=split,
-            streaming=streaming,
-            cache_dir=cache_dir,
-            **load_kwargs,
-        )
-        self.dataset: HFIterableDataset = self.base_dataset.cast_column(
-            "audio", Audio(sampling_rate=sampling_rate, decode=False)
-        )
+
+        def resolve_splits(subset_name: str, split_expr: str) -> List[str]:
+            expr = split_expr.replace(" ", "")
+            if subset_name == "all" and expr in {"train.960", "train"}:
+                return ["train.clean.100", "train.clean.360", "train.other.500"]
+            if "+" in expr:
+                return expr.split("+")
+            return [expr]
+
+        split_list = resolve_splits(subset, split)
+        datasets: List[HFIterableDataset] = []
+        for split_name in split_list:
+            ds = load_dataset(
+                "librispeech_asr",
+                subset,
+                split=split_name,
+                streaming=streaming,
+                cache_dir=cache_dir,
+                **load_kwargs,
+            )
+            datasets.append(ds.cast_column("audio", Audio(sampling_rate=sampling_rate, decode=False)))
+
+        self.datasets: List[HFIterableDataset] = datasets
         self.sampling_rate = sampling_rate
         self.text_column = text_column
         self.max_samples = max_samples
@@ -93,22 +105,23 @@ class StreamingLibriSpeechDataset(IterableDataset):
     def __iter__(self) -> Iterator[Tuple[torch.Tensor, torch.Tensor, int, str]]:
         worker = get_worker_info()
         if worker is None:
-            iterable: Iterable = self.dataset
+            iterables: Iterable = self.datasets
         else:
-            iterable = self.dataset.shard(worker.num_workers, worker.id)
+            iterables = [ds.shard(worker.num_workers, worker.id) for ds in self.datasets]
 
         yielded = 0
-        for sample in iterable:
-            audio_meta = sample["audio"]
-            waveform, sample_rate = self.decode_audio(audio_meta)
-            transcript = sample[self.text_column]
-            waveform_tensor = torch.from_numpy(waveform).float()
-            logmel_tensor = self.audio_to_melspec(waveform_tensor)
-            yield waveform_tensor, logmel_tensor, sample_rate, transcript
+        for iterable in iterables:
+            for sample in iterable:
+                audio_meta = sample["audio"]
+                waveform, sample_rate = self.decode_audio(audio_meta)
+                transcript = sample[self.text_column]
+                waveform_tensor = torch.from_numpy(waveform).float()
+                logmel_tensor = self.audio_to_melspec(waveform_tensor)
+                yield waveform_tensor, logmel_tensor, sample_rate, transcript
 
-            yielded += 1
-            if self.max_samples is not None and yielded >= self.max_samples:
-                break
+                yielded += 1
+                if self.max_samples is not None and yielded >= self.max_samples:
+                    return
 
     def decode_audio(self, audio_meta: Dict) -> Tuple["np.ndarray", int]:
         """

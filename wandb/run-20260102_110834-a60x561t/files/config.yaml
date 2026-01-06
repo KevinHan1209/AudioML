@@ -1,0 +1,132 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            c9ojftbdtzkkwrwnykppquknhsg7ot6v:
+                args:
+                    - --steps-per-epoch
+                    - "5000"
+                    - --batch-size
+                    - "8"
+                    - --epochs
+                    - "15"
+                    - --wandb
+                codePath: train_streaming_ctc.py
+                codePathLocal: train_streaming_ctc.py
+                cpu_count: 32
+                cpu_count_logical: 64
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "1963519844352"
+                        used: "1588574879744"
+                email: kevinhan@utexas.edu
+                executable: /home/kevin/miniconda3/envs/audioML/bin/python
+                git:
+                    commit: 2f768a51ffdede61529eb43ad22c35d9c62cd099
+                    remote: https://github.com/KevinHan1209/AudioML.git
+                gpu: NVIDIA GeForce RTX 2080 Ti
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 4352
+                      memoryTotal: "11811160064"
+                      name: NVIDIA GeForce RTX 2080 Ti
+                      uuid: GPU-63307af7-2ca9-29df-dad7-e95b3f5defb4
+                    - architecture: Turing
+                      cudaCores: 4352
+                      memoryTotal: "11811160064"
+                      name: NVIDIA GeForce RTX 2080 Ti
+                      uuid: GPU-c7318003-f215-aa88-e936-c58d54643573
+                    - architecture: Turing
+                      cudaCores: 4352
+                      memoryTotal: "11811160064"
+                      name: NVIDIA GeForce RTX 2080 Ti
+                      uuid: GPU-219f95f0-6b91-15d6-436f-cf1f0d82d297
+                    - architecture: Turing
+                      cudaCores: 4352
+                      memoryTotal: "11811160064"
+                      name: NVIDIA GeForce RTX 2080 Ti
+                      uuid: GPU-deac1f90-5232-de6a-e6de-34dd4f78ce43
+                host: dr-light
+                memory:
+                    total: "270076235776"
+                os: Linux-6.8.0-90-generic-x86_64-with-glibc2.35
+                program: /home/kevin/AudioML/train_streaming_ctc.py
+                python: CPython 3.14.2
+                root: /home/kevin/AudioML
+                startedAt: "2026-01-02T17:08:34.849603Z"
+                writerId: c9ojftbdtzkkwrwnykppquknhsg7ot6v
+        m: []
+        python_version: 3.14.2
+        t:
+            "1":
+                - 1
+                - 49
+                - 51
+            "2":
+                - 1
+                - 49
+                - 51
+            "3":
+                - 2
+                - 16
+                - 61
+            "4": 3.14.2
+            "5": 0.23.1
+            "12": 0.23.1
+            "13": linux-x86_64
+batch_size:
+    value: 8
+cache_dir:
+    value: null
+checkpoint_path:
+    value: bilstm_ctc_checkpoint.pt
+dropout:
+    value: 0.1
+epochs:
+    value: 15
+fmax:
+    value: null
+fmin:
+    value: 0
+grad_clip:
+    value: 5
+hidden_size:
+    value: 256
+hop_length:
+    value: 160
+log_interval:
+    value: 10
+lr:
+    value: 0.001
+max_samples:
+    value: null
+n_fft:
+    value: 400
+n_mels:
+    value: 80
+num_layers:
+    value: 3
+num_workers:
+    value: 0
+pin_memory:
+    value: false
+sample_rate:
+    value: 16000
+split:
+    value: train.100
+steps_per_epoch:
+    value: 5000
+subset:
+    value: clean
+use_wandb:
+    value: true
+wandb_mode:
+    value: null
+wandb_project:
+    value: audioml-ctc
+wandb_run_name:
+    value: null
+weight_decay:
+    value: 0.0001

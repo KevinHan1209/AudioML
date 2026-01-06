@@ -11,3 +11,62 @@ Epoch 1 Step 100 - avg loss/frame: 0.0025 - batch loss: 2.9138
 Epoch 1 complete. Processed steps=100, avg loss/frame=0.0025
 Epoch 2 Step 10 - avg loss/frame: 0.0021 - batch loss: 2.8563
 Epoch 2 Step 20 - avg loss/frame: 0.0022 - batch loss: 2.8912
+Epoch 2 Step 30 - avg loss/frame: 0.0021 - batch loss: 2.8552
+Epoch 2 Step 40 - avg loss/frame: 0.0021 - batch loss: 2.8368
+Epoch 2 Step 50 - avg loss/frame: 0.0022 - batch loss: 2.9060
+Epoch 2 Step 60 - avg loss/frame: 0.0022 - batch loss: 2.8691
+Epoch 2 Step 70 - avg loss/frame: 0.0021 - batch loss: 2.8576
+Epoch 2 Step 80 - avg loss/frame: 0.0021 - batch loss: 2.8999
+Epoch 2 Step 90 - avg loss/frame: 0.0022 - batch loss: 2.8625
+Epoch 2 Step 100 - avg loss/frame: 0.0022 - batch loss: 2.9168
+Epoch 2 complete. Processed steps=100, avg loss/frame=0.0022
+Epoch 3 Step 10 - avg loss/frame: 0.0021 - batch loss: 2.8546
+Epoch 3 Step 20 - avg loss/frame: 0.0022 - batch loss: 2.8885
+Epoch 3 Step 30 - avg loss/frame: 0.0021 - batch loss: 2.8524
+Epoch 3 Step 40 - avg loss/frame: 0.0021 - batch loss: 2.8361
+Epoch 3 Step 50 - avg loss/frame: 0.0022 - batch loss: 2.9047
+Epoch 3 Step 60 - avg loss/frame: 0.0022 - batch loss: 2.8680
+Epoch 3 Step 70 - avg loss/frame: 0.0021 - batch loss: 2.8562
+Epoch 3 Step 80 - avg loss/frame: 0.0021 - batch loss: 2.8997
+Epoch 3 Step 90 - avg loss/frame: 0.0022 - batch loss: 2.8621
+Epoch 3 Step 100 - avg loss/frame: 0.0022 - batch loss: 2.9113
+Epoch 3 complete. Processed steps=100, avg loss/frame=0.0022
+Epoch 4 Step 10 - avg loss/frame: 0.0021 - batch loss: 2.8524
+Epoch 4 Step 20 - avg loss/frame: 0.0022 - batch loss: 2.8866
+Epoch 4 Step 30 - avg loss/frame: 0.0021 - batch loss: 2.8527
+Epoch 4 Step 40 - avg loss/frame: 0.0021 - batch loss: 2.8325
+Epoch 4 Step 50 - avg loss/frame: 0.0022 - batch loss: 2.9026
+Epoch 4 Step 60 - avg loss/frame: 0.0022 - batch loss: 2.8619
+Epoch 4 Step 70 - avg loss/frame: 0.0021 - batch loss: 2.8494
+Epoch 4 Step 80 - avg loss/frame: 0.0021 - batch loss: 2.8953
+Epoch 4 Step 90 - avg loss/frame: 0.0021 - batch loss: 2.8578
+Epoch 4 Step 100 - avg loss/frame: 0.0022 - batch loss: 2.8999
+Epoch 4 complete. Processed steps=100, avg loss/frame=0.0022
+Epoch 5 Step 10 - avg loss/frame: 0.0021 - batch loss: 2.8420
+Epoch 5 Step 20 - avg loss/frame: 0.0022 - batch loss: 2.8694
+Traceback (most recent call last):
+  File "/home/kevin/AudioML/train_streaming_ctc.py", line 257, in <module>
+    train(parse_args())
+    ~~~~~^^^^^^^^^^^^^^
+  File "/home/kevin/AudioML/train_streaming_ctc.py", line 151, in train
+    log_probs = model(batch_logmels)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kevin/AudioML/train_streaming_ctc.py", line 67, in forward
+    h, _ = self.lstm(features)
+           ~~~~~~~~~^^^^^^^^^^
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/torch/nn/modules/rnn.py", line 1127, in forward
+    result = _VF.lstm(
+        input,
+    ...<7 lines>...
+        self.batch_first,
+    )
+KeyboardInterrupt

@@ -19,3 +19,213 @@ config: {'subset': 'clean', 'split': 'train.100', 'sample_rate': 16000, 'batch_s
 2026-01-01 15:38:21,141 INFO    MainThread:1189032 [wandb_run.py:_redirect():2438] Wrapping output streams.
 2026-01-01 15:38:21,142 INFO    MainThread:1189032 [wandb_run.py:_redirect():2461] Redirects installed.
 2026-01-01 15:38:21,144 INFO    MainThread:1189032 [wandb_init.py:init():1081] run started, returning control to user process
+2026-01-01 15:40:05,633 INFO    wandb-AsyncioManager-main:1189032 [service_client.py:_forward_responses():80] Reached EOF.
+2026-01-01 15:40:05,633 INFO    wandb-AsyncioManager-main:1189032 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2026-01-01 15:40:06,072 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,076 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,077 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,080 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,081 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,082 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,082 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,083 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,084 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,084 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,085 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,086 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,086 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,087 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,095 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2026-01-01 15:40:06,096 ERROR   wandb-AsyncioManager-main:1189032 [asyncio_manager.py:fn_wrap_exceptions():183] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/asyncio_manager.py", line 181, in fn_wrap_exceptions
+    await fn()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "/home/kevin/miniconda3/envs/audioML/lib/python3.14/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

@@ -1,0 +1,1 @@
+{"train/frames_seen":36234199,"train/epoch_avg_loss_per_frame":0.0005486632428917234,"_timestamp":1.7673854026719983e+09,"_step":53520,"train/batch_loss":0.6281439065933228,"_runtime":11687.182488091,"train/step":3560,"train/epoch":15,"train/processed_steps":3568,"_wandb":{"runtime":11687},"train/avg_loss_per_frame":0.0005487014611983519}

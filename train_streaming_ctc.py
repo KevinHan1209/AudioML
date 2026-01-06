@@ -89,10 +89,18 @@ def collate_waveforms_ctc(batch):
     return waveforms, logmels_padded, input_lengths, list(sample_rates), list(transcripts)
 
 
+def canonical_split(subset: str, split: str) -> str:
+    if subset == "all" and split == "train.960":
+        # Combine clean-100 + clean-360 + other-500 for full 960h
+        return "train.clean.100+train.clean.360+train.other.500"
+    return split
+
+
 def build_dataloader(args) -> DataLoader:
+    split = canonical_split(args.subset, args.split)
     dataset = StreamingLibriSpeechDataset(
         subset=args.subset,
-        split=args.split,
+        split=split,
         sampling_rate=args.sample_rate,
         streaming=True,
         cache_dir=args.cache_dir,
@@ -216,8 +224,8 @@ def train(args):
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train a simple BiLSTM-CTC model on streaming LibriSpeech.")
-    parser.add_argument("--subset", default="clean", help="LibriSpeech config (clean/other/all).")
-    parser.add_argument("--split", default="train.100", help="datasets split to stream.")
+    parser.add_argument("--subset", default="other", help="LibriSpeech config (clean/other/all).")
+    parser.add_argument("--split", default="train.500", help="datasets split to stream.")
     parser.add_argument("--sample-rate", type=int, default=16_000, dest="sample_rate")
     parser.add_argument("--batch-size", type=int, default=4, dest="batch_size")
     parser.add_argument("--num-workers", type=int, default=0, dest="num_workers")
